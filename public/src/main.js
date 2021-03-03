@@ -1,3 +1,3 @@
 const inputDispatch = document.getElementById('dispatch');
-
-export {inputDispatch};
+const dispatchBtn = document.getElementById('submit');
+export {inputDispatch, dispatchBtn};
