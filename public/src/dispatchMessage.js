@@ -72,15 +72,6 @@ function drawPie() {
         ctx.restore();
     }
 
-    // 원판안의 원
-    // ctx.beginPath();
-    // // x, y, 반지름, 각도 시각점 , 각도 끝나는 점, 기본값 false 시계 방향
-    // ctx.arc(width/2,height/2,70,0,(Math.PI*2),true);
-    // // ctx.arc(width/2,height/2,70,(Math.PI/180)*90,(Math.PI/180)*135,true);
-    // // 경로의 내부를 채워서 내부가 체워진 도형을 그린다. 
-    // ctx.fill();
-    // ctx.closePath();
-
     // 16진수 문자 그리기
     let text = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
     let underBar = "_";
@@ -103,59 +94,22 @@ function drawPie() {
     ctx.restore();
     }
     ctx.restore();
-
-    // let time = new Date();
-    // ctx.beginPath();
-    // ctx.strokeStyle = "yellow";
-    // ctx.lineWidth = 5;
-    // // ctx.save();
-    // // x, y, 반지름, 각도 시각점 , 각도 끝나는 점, 기본값 false 시계 방향
-    // ctx.moveTo(width/2,height/2);
-    // ctx.lineTo(width/2,(height/2)-70);
-    // ctx.stroke();
-    // ctx.translate(width/2,height/2);
-    // ctx.rotate((Math.PI/180)*time.getSeconds());
-    // ctx.save();
-    // ctx.closePath();
-}
-function drawHandle () {
-    let time = new Date();
-    ctx.beginPath();
-    // ctx.strokeStyle = "yellow";
-    // ctx.lineWidth = 5;
-    // // ctx.save();
-    // // x, y, 반지름, 각도 시각점 , 각도 끝나는 점, 기본값 false 시계 방향
-    // ctx.moveTo(width/2,height/2);
-    // ctx.lineTo(width/2,(height/2)-70);
-    // ctx.stroke();
-    ctx.arc(width/2,height/2,70,0,(Math.PI),true);
-    // ctx.arc(width/2,height/2,70,(Math.PI/180)*90,(Math.PI/180)*135,true);
-    // 경로의 내부를 채워서 내부가 체워진 도형을 그린다. 
-    
-    ctx.translate(width/2,height/2);
-    ctx.rotate((Math.PI/180)*time.getSeconds());
-    ctx.fill();
-    ctx.save();
-    ctx.closePath();
 }
 drawPie();
-// setInterval(drawHandle,100);
 
 let sec =0;
 function init(){
-    clock();
-    setInterval(clock,1000/60);
+    arrow();
+    setInterval(arrow,1000/60);
   }
   init();
   
-  function clock(){
+  function arrow(){
     var now = new Date();
-    // var ctx = document.getElementById('myCanvas').getContext('2d');
     ctx.save();
     ctx.clearRect(230,230,140,140);
     ctx.translate(width/2,height/2);
     ctx.scale(0.4,0.4);
-    // ctx.rotate(-Math.PI/2);
     ctx.strokeStyle = "black";
     ctx.fillStyle = "white";
     ctx.lineWidth = 8;
