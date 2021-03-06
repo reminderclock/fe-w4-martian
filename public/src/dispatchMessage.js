@@ -140,13 +140,10 @@ function init(){
     ctx.arc(0,0,3,0,Math.PI*2,true);
     ctx.fill();
     ctx.restore();
-  
     ctx.beginPath();
     ctx.lineWidth = 14;
     ctx.strokeStyle = '#325FA2';
     ctx.arc(0,0,142,0,Math.PI*2,true);
     ctx.stroke();
-  
     ctx.restore();
-  }
-
+}
