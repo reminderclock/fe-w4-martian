@@ -1,12 +1,12 @@
 import {inputDispatch, dispatchBtn} from './main.js';
 
-let asciiArr = [];
+const asciiArr = [];
 
-function loadData() {
-    inputDispatch.addEventListener('keyup', changeStr);
+function getDispatchEvent() {
+    inputDispatch.addEventListener('keyup', changeStringToHexAscii);
     }
-loadData();
-function changeStr() {
+getDispatchEvent();
+function changeStringToHexAscii() {
     let decAscii = inputDispatch.value.charCodeAt(inputDispatch.value.length-1);
     let hexAscii = Number(decAscii).toString(16)
     asciiArr.push(hexAscii);
