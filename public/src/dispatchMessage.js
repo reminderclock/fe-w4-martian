@@ -21,7 +21,25 @@ function submitData(event) {
     inputDispatch.value = "";
 }
 function sendData(data) {
-    console.log(data);
+    findAngle(data);
+    // console.log(data);
+}
+let sec =0;
+function findAngle(data) {
+    // ctx.restore();
+    // ctx.restore();
+    // ctx.translate(width/2,height/2);
+    let dataArr = data.split(' ');
+    let eachArr = dataArr.map(e => e.split(''));
+    console.log(eachArr);
+    // sec++;
+    // if(sec === 360) {
+    //     sec = 0;
+    // }
+    // console.log(sec)
+    // // 시간 표시 - 초
+    // ctx.save();
+    // ctx.rotate(sec * Math.PI/30);
 }
 
 const canvas = document.getElementById('myCanvas');
@@ -97,15 +115,15 @@ function drawPie() {
 }
 drawPie();
 
-let sec =0;
+
 function init(){
     arrow();
     setInterval(arrow,1000/60);
   }
   init();
   
+  
   function arrow(){
-    var now = new Date();
     ctx.save();
     ctx.clearRect(230,230,140,140);
     ctx.translate(width/2,height/2);
@@ -119,8 +137,8 @@ function init(){
     if(sec === 360) {
         sec = 0;
     }
-    console.log(sec)
-    // 시간 표시 - 초
+    // console.log(sec)
+    // // 시간 표시 - 초
     ctx.save();
     ctx.rotate(sec * Math.PI/30);
     ctx.strokeStyle = "#D40000";
